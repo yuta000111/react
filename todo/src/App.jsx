@@ -2,17 +2,19 @@ import React, { createContext, useState } from 'react';
 import TodoList from './compornent/todoList';
 import UserInput from './compornent/userInput';
 
-export const allList = createContext([
+const baseTask = [
   {
-    id: '',
-    task: '',
+    id: 1,
+    task: 'このように表示されます',
     status: false,
     remove: false,
   },
-]);
+];
+
+export const allList = createContext(baseTask);
 
 function App() {
-  const [tasks, setTasks] = useState(allList);
+  const [tasks, setTasks] = useState(allList._currentValue);
 
   const addTasks = ({ task, status, remove }) => {
     setTasks([
@@ -25,8 +27,8 @@ function App() {
       <header className="App-header">
         <h1>todo app</h1>
         <allList.Provider value={{ tasks, addTasks }}>
-          <TodoList></TodoList>
           <UserInput></UserInput>
+          <TodoList></TodoList>
         </allList.Provider>
       </header>
     </div>
