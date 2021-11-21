@@ -13,7 +13,7 @@ function userInput() {
 
   return (
     <div className="userInput">
-      <form onSubmit={submitTask}>
+      <form id="app" onSubmit={submitTask}>
         <input
           type="text"
           value={task}
@@ -25,17 +25,17 @@ function userInput() {
           type="checkbox"
           value={status}
           onChange={(event) => {
-            setStatus(event.target.value);
+            setStatus(event.target.checked);
           }}
         />
         <input
           type="checkbox"
           value={remove}
           onChange={(event) => {
-            setRemove(event.target.value);
+            setRemove(event.target.checked);
           }}
         />
-        <input type="button" value="追加" />
+        <input type="submit" value="追加" form="app" />
       </form>
     </div>
   );
