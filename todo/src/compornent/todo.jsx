@@ -1,7 +1,8 @@
-import React from 'react';
+import React /* { useContext }  */ from 'react';
+/* import { allList } from '../App'; */
 
 export default function Todo({ id, task, remove, status }) {
-  console.log(id, task, remove, status);
+  /* const { removeTask } = useContext(allList); */
   return (
     <li>
       <div className="list">

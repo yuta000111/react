@@ -8,6 +8,7 @@ function userInput() {
   const [remove, setRemove] = useState(false);
   const submitTask = (e) => {
     e.preventDefault();
+    console.log(task, status, remove);
     addTasks(task, status, remove);
   };
 

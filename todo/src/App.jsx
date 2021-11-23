@@ -13,22 +13,34 @@ const baseTask = [
 
 export const allList = createContext(baseTask);
 
-function App() {
+function App({ children }) {
+  console.log(children);
   const [tasks, setTasks] = useState(allList._currentValue);
 
-  const addTasks = ({ task, status, remove }) => {
+  const addTasks = (task, status, remove) => {
     setTasks([
       ...tasks,
-      { id: tasks.length + 1, task, status, remove },
+      {
+        id: tasks.length + 1,
+        task: task,
+        status: status,
+        remove: remove,
+      },
     ]);
+  };
+  const removeTask = ({ removeId }) => {
+    tasks.filter((task) => {
+      task.id !== removeId;
+    });
   };
   return (
     <div className="App">
       <header className="App-header">
         <h1>todo app</h1>
-        <allList.Provider value={{ tasks, addTasks }}>
-          <UserInput></UserInput>
-          <TodoList></TodoList>
+        <allList.Provider
+          value={{ tasks, addTasks, removeTask }}>
+          <UserInput />
+          <TodoList />
         </allList.Provider>
       </header>
     </div>
