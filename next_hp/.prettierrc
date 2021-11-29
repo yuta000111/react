@@ -1,6 +1,6 @@
 {
     "printWidth": 60,
-    "trailingComma": "es7",
+    "trailingComma": "es5",
     "Semicolons": true,
     "singleQuote": true,
     "jsxBracketSameLine": true,
