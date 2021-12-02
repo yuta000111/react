@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
-const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
 export async function getAllPostsData() {
   const res = await fetch(new URL(apiUrl));
@@ -21,10 +21,11 @@ export async function getAllPostIds() {
   });
 }
 
-export async function getPostsData(id) {
+export async function getPostData(id) {
   const res = await fetch(new URL(`${apiUrl}/${id}/`));
   const post = await res.json();
-  return {
-    post,
-  };
+  // return {
+  //   post,
+  // };
+  return post;
 }

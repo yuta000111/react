@@ -1,11 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
+import Image from 'next/image'
 
-export default function Layout({
-  children,
-  title = 'HP by Next JS',
-}) {
+export default function Layout({ children, title = "HP by Nextjs" }) {
   return (
     <div className="flex justify-center items-center flex-col min-h-screen text-gray-600 text-sm font-mono">
       <Head>
@@ -17,7 +14,7 @@ export default function Layout({
             <div className="flex space-x-4">
               <Link href="/">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
-                  HOME
+                  Home
                 </a>
               </Link>
               <Link href="/blog-page">
@@ -34,7 +31,7 @@ export default function Layout({
           </div>
         </nav>
       </header>
-      <main className="flex flex-1 justify-center items-center flex-col w-screeen">
+      <main className="flex flex-1 justify-center items-center flex-col w-screen">
         {children}
       </main>
       <footer className="w-full h-12 flex justify-center items-center border-t">
@@ -42,13 +39,11 @@ export default function Layout({
           className="flex items-center"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
-          rel="noopener noreferrer">
-          Powered by{' '}
-          <img
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            className="h-4 ml-2"
-          />
+          rel="noopener noreferrer"
+        >
+          Powered by{" "}
+          {/* <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" /> */}
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a>
       </footer>
     </div>
