@@ -37,3 +37,15 @@ class TaskRetrieveView(generics.RetrieveAPIView):
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+
+
+
+
+
+
+
+
+
+
+
+
